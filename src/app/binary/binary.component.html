@@ -1,27 +1,64 @@
 <mat-card>
-  <mat-card-title>Number to Binary</mat-card-title>
+  <mat-card-title>Binary-Converter</mat-card-title>
   <mat-form-field>
-    <input matInput id="numInput" type="number" placeholder="Number" [formControl]="numberInput" (input)="onNumberInput()">
+    <input
+      matInput
+      id="numInput"
+      type="number"
+      placeholder="Number"
+      [formControl]="numberInput"
+      (input)="onNumberInput()"
+    />
     <mat-error *ngIf="numberInput.invalid">{{ getErrorMessage() }}</mat-error>
   </mat-form-field>
 
   &nbsp;
 
   <mat-form-field>
-    <input matInput id="binInput" type="text" placeholder="Binary" [formControl]="binaryInput" (input)="onBinaryInput()">
-    <mat-error *ngIf="binaryInput.invalid">{{ getBinaryErrorMessage() }}</mat-error>
+    <input
+      matInput
+      id="binInput"
+      type="text"
+      placeholder="Binary"
+      [formControl]="binaryInput"
+      (input)="onBinaryInput()"
+    />
+    <mat-error *ngIf="binaryInput.invalid">{{
+      getBinaryErrorMessage()
+    }}</mat-error>
   </mat-form-field>
 
-  <!-- <div>
-    <button mat-raised-button type="button" [disabled]="numberInput.invalid" (click)="onConvert()">Convert</button>
-  </div> -->
-  <br>
-  <mat-divider></mat-divider>
-  <br>
+  &nbsp;
 
-  <mat-card-content *ngIf="binaryNumber">
-    <h4>Binary to Number Expression</h4>
-    <p [innerHTML]="getBinaryToNumberExpression()"></p>
-  </mat-card-content>
+  <mat-form-field>
+    <input
+      matInput
+      id="hexInput"
+      type="text"
+      placeholder="Hexadecimal"
+      [formControl]="hexInput"
+      (input)="onHexInput()"
+      readonly="true"
+    />
+    <mat-hint><small>Readonly</small></mat-hint>
+    <mat-error *ngIf="hexInput.invalid">{{ getHexErrorMessage() }}</mat-error>
+  </mat-form-field>
+
+  <br /><br />
+  <mat-divider></mat-divider>
+  <br />
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Binary to Number Expression </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card-content *ngIf="binaryNumber">
+        <p [innerHTML]="getBinaryToNumberExpression()"></p>
+      </mat-card-content>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
 
 </mat-card>

@@ -3,19 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BinaryComponent } from './binary/binary.component';
-// Anaular Material and other shared imports defined in shared module
-import { SharedModule } from './shared/shared.module';
+
+import { BinaryModule } from './binary/binary.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BinaryComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    BinaryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

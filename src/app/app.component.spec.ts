@@ -1,8 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { BinaryComponent } from './binary/binary.component';
-import { SharedModule } from './shared/shared.module';
+import { BinaryModule } from './binary/binary.module';
 
 
 describe('AppComponent', () => {
@@ -10,11 +9,10 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        SharedModule
+        BinaryModule
       ],
       declarations: [
-        AppComponent,
-        BinaryComponent
+        AppComponent
       ],
     }).compileComponents();
   }));

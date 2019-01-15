@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BinaryComponent } from './binary.component';
-import { SharedModule } from '../shared/shared.module';
 import { By } from '@angular/platform-browser';
 
 describe('BinaryComponent', () => {
@@ -11,7 +10,7 @@ describe('BinaryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BinaryComponent],
-      imports: [SharedModule]
+      imports: []
     }).compileComponents();
   }));
 
@@ -49,5 +48,13 @@ describe('BinaryComponent', () => {
   it('should ensure binary number input only accepts 0s and 1s', () => {
     component.binaryInput.setValue('1024gjfj');
     expect(component.binaryInput.valid).toBeFalsy();
+  });
+
+  it('should display 4D2 hexadicaml for number 1234', () => {
+    const input = fixture.debugElement.query(By.css('#numInput'));
+    const numInput = input.nativeElement as HTMLInputElement;
+    numInput.value = '1234';
+    numInput.dispatchEvent(new Event('input'));
+    expect(component.hexInput.value).toEqual('4D2');
   });
 });
