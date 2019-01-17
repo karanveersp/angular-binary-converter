@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/material2-app-theme.scss",
+              "src/themes.scss",
               "src/styles.css"
             ],
             "scripts": []

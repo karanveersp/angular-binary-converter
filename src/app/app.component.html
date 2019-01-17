@@ -1,1 +1,3 @@
-<app-binary></app-binary>
+<div class="mat-app-background" [ngClass]="{'dark-theme': enableDarkTheme}">
+  <app-binary (enableDarkTheme)="onThemeChangeEvent($event)"></app-binary>
+</div>

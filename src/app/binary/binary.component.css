@@ -1,4 +1,9 @@
 mat-card {
   width: 60%;
   margin: 10px auto;
+  margin-top: 5%;
+}
+
+.themeButton {
+  float: right;
 }

@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 import { BinaryComponent } from './binary.component';
 
@@ -21,7 +22,8 @@ import { BinaryComponent } from './binary.component';
     MatInputModule,
     MatCardModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule
   ],
   declarations: [BinaryComponent],
   exports: [BinaryComponent]

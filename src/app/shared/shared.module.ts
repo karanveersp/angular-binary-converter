@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [],
@@ -21,7 +23,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatCardModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    OverlayModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -30,7 +33,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatCardModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule
   ]
 })
 export class SharedModule { }

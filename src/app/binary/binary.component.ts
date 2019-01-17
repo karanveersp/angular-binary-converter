@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+
 import { BinaryNumber } from './binary.model';
 import { Hexadecimal } from './hex.model';
-
 
 @Component({
   selector: 'app-binary',
@@ -10,6 +10,14 @@ import { Hexadecimal } from './hex.model';
   styleUrls: ['./binary.component.css']
 })
 export class BinaryComponent implements OnInit {
+  // Theming properties
+  @HostBinding('class.dark-theme') darkTheme = false;
+  @HostBinding('class.light-theme') lightTheme = true;
+  @Output() enableDarkTheme = new EventEmitter<boolean>();
+  theme = 'light-theme';
+  btnText = 'Dark Theme';
+
+
   binaryNumber: BinaryNumber;
   hexNumber: Hexadecimal;
 
@@ -20,6 +28,22 @@ export class BinaryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onThemeChange() {
+    if (this.theme === 'light-theme') {
+      this.lightTheme = false;
+      this.darkTheme = true;
+      this.theme = 'dark-theme';
+      this.btnText = 'Light Theme';
+      this.enableDarkTheme.emit(true);
+    } else {
+      this.lightTheme = true;
+      this.darkTheme = false;
+      this.theme = 'light-theme';
+      this.btnText = 'Dark Theme';
+      this.enableDarkTheme.emit(false);
+    }
   }
 
   onNumberInput(): void {

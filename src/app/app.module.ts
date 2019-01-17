@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BinaryModule } from './binary/binary.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BinaryModule } from './binary/binary.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BinaryModule
+    BinaryModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
